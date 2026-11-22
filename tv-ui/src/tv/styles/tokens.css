@@ -1,0 +1,26 @@
+:root,
+.tv-canvas {
+  color-scheme: dark;
+  --tv-canvas-background: #141315;
+  --tv-accent: #fa7489;
+  --tv-blue: #0071e3;
+  --tv-blue-hover: #0077ed;
+  --tv-glass: rgba(255, 255, 255, 0.075);
+  --tv-glass-strong: rgba(32, 29, 33, 0.88);
+  --tv-border: rgba(255, 255, 255, 0.12);
+  --tv-text: #f5f7fb;
+  --tv-text-secondary: #bbb7be;
+  --tv-focus-ring: #f5f8ff;
+  --tv-focus-shadow: 0 0 0 4px var(--tv-focus-ring), 0 14px 32px rgba(0, 0, 0, 0.4);
+  --tv-focus-scale: 1.06;
+  --tv-focus-duration: 120ms;
+  --tv-radius-card: 18px;
+  --tv-radius-panel: 28px;
+  --tv-content-bottom-safe: 152px;
+  --tv-card-title-size: 24px;
+  --tv-card-meta-size: 20px;
+  --tv-card-rest: rgba(255, 255, 255, 0.035);
+  --tv-card-focus: rgba(255, 255, 255, 0.12);
+  --tv-card-focus-border: rgba(255, 255, 255, 0.8);
+  --tv-glass-fallback: rgba(31, 29, 33, 0.98);
+}

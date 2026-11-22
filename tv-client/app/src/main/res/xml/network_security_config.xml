@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+    <!-- KuGou's media CDN returns HTTP URLs and its multi-level hosts do not
+         present certificates matching those hostnames. Scope cleartext to
+         media-only KuGou domains; all API bases remain HTTPS-enforced in code. -->
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">kugou.com</domain>
+        <domain includeSubdomains="true">kugou.net</domain>
+        <!-- Exact official MV delivery host observed from trackermv; no wildcard. -->
+        <domain includeSubdomains="false">kgv.stream.tencentmusic.com</domain>
+    </domain-config>
+</network-security-config>

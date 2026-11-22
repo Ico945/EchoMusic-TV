@@ -1,0 +1,230 @@
+:root {
+  --tv-canvas-background: #141315;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  background-color: var(--tv-canvas-background);
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
+  color: var(--tv-text);
+}
+
+button,
+a {
+  font: inherit;
+}
+
+.tv-canvas {
+  --tv-canvas-background: #141315;
+  background-color: var(--tv-canvas-background);
+  background-image:
+    radial-gradient(ellipse at 80% 0%, rgba(131, 64, 81, 0.18), transparent 55%),
+    linear-gradient(145deg, #19171b, #121214 75%);
+  display: grid;
+  grid-template-columns: 5% 90% 5%;
+  grid-template-rows: 5% 90% 5%;
+  width: 1920px;
+  height: 1080px;
+  overflow: hidden;
+  transform-origin: left top;
+}
+
+.tv-safe-area {
+  grid-column: 2;
+  grid-row: 2;
+  min-width: 0;
+  min-height: 0;
+}
+
+/* One inset policy for every scrollable route, including legacy 150px pages.
+   Immersive audio/video surfaces must retain their full-height layout. */
+.tv-canvas .content-surface > [data-page]:not([data-page="now-playing"]):not([data-page="mv-detail"]) {
+  padding-bottom: var(--tv-content-bottom-safe);
+}
+
+[data-focus-id] {
+  outline: none;
+  transition:
+    transform var(--tv-focus-duration) ease-out,
+    opacity var(--tv-focus-duration) ease-out;
+}
+
+[data-focus-id]:focus-visible,
+[data-focus-id]:focus {
+  box-shadow: var(--tv-focus-shadow);
+  transform: scale(var(--tv-focus-scale));
+  opacity: 1;
+  z-index: 4;
+}
+
+.tv-card {
+  border-color: transparent;
+  background-color: var(--tv-card-rest);
+  transform-origin: center;
+}
+
+.tv-card:focus,
+.tv-card:focus-visible {
+  border-color: var(--tv-card-focus-border);
+  background-color: var(--tv-card-focus);
+}
+
+.tv-no-blur .top-nav,
+.tv-no-blur .mini-player,
+.tv-no-blur .player-controls,
+.tv-no-blur .mode-switch,
+.tv-no-blur .mv-controls,
+.tv-no-blur .player-drawer,
+.tv-no-blur .playback-error,
+.tv-no-blur .now-playing-page .overlay:not(.queue-overlay) {
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  background: var(--tv-glass-fallback) !important;
+}
+
+/* The playback dock is outside scrolling content, so only a focus-ring inset
+   is needed at the bottom of browsing routes (not an overlay-sized blank tail). */
+.tv-canvas .shell-background:not(.player-active):not(.mv-active) .content-surface > [data-page] { padding-bottom:40px; }
+
+/* Low-memory/older TVs must not retain the player's large blurred textures
+   after only the glass backdrop filters have been disabled. Static canvas
+   gradients, clear artwork, lyrics and focus outlines remain visible. */
+.tv-no-blur .now-playing-page::before,
+.tv-no-blur .now-playing-page .ambient {
+  display: none !important;
+  filter: none !important;
+  animation: none !important;
+}
+
+.tv-no-blur .now-playing-page .player-header,
+.tv-no-blur .now-playing-page .bottom-controls,
+.tv-no-blur .now-playing-page .track-copy,
+.tv-no-blur .now-playing-page .artwork-wrap {
+  filter: none !important;
+}
+
+/* Glass and motion have separate budgets. No-blur TVs keep a cheap ring and
+   short compositor-only transitions; no animated blur/shadow/scrolling. */
+.tv-no-blur [data-focus-id] {
+  transition: transform 110ms ease-out, opacity 110ms ease-out;
+}
+
+/* Mount-only entrances: old routes disappear immediately and focus is never
+   gated by a leave transition. Exclude the transparent native-video surface. */
+.tv-canvas .content-surface > [data-page]:not([data-page="mv-detail"]),
+.tv-canvas .tv-track-enter {
+  animation: tv-page-enter 160ms ease-out;
+}
+/* Direction is conveyed by the heading, not a transform on the entire page:
+   whole-page transforms change the containing block of fixed song menus. */
+.tv-canvas .content-surface > [data-page] > .page-header {
+  animation: tv-heading-enter 160ms cubic-bezier(.2,.7,.2,1);
+}
+@keyframes tv-heading-enter { from { transform:translateX(var(--tv-route-enter-x,12px)); } to { transform:translateX(0); } }
+.tv-canvas .player-drawer,
+.tv-canvas .song-menu,
+.tv-canvas .login-dialog,
+.tv-canvas .share-dialog,
+.tv-canvas .exit-dialog,
+.tv-canvas .playback-error {
+  /* Keep the same containing block before, during and after the entrance. */
+  translate: 0 0;
+  animation: tv-panel-enter 180ms cubic-bezier(.2,.7,.2,1);
+}
+@keyframes tv-page-enter { from { opacity:.72; } to { opacity:1; } }
+@keyframes tv-panel-enter { from { opacity:.6; translate:0 8px; } to { opacity:1; translate:0 0; } }
+
+/* A burst retargets a short transition; focus itself remains synchronous. */
+.tv-canvas.tv-rapid-input [data-focus-id] { transition:transform 60ms ease-out,opacity 60ms ease-out !important; }
+.tv-canvas.tv-rapid-input .content-surface > [data-page] { animation:none !important; }
+.tv-canvas.tv-rapid-input .page-header { animation:none !important; }
+
+.tv-overlay-enter-active { transition:opacity 180ms ease-out; }
+.tv-overlay-leave-active { transition:opacity 140ms ease-in; pointer-events:none !important; }
+.tv-overlay-enter-from,.tv-overlay-leave-to { opacity:0; }
+.tv-overlay-enter-active > :is(.player-drawer,.playback-error,.exit-dialog,.login-dialog),
+.tv-overlay-leave-active > :is(.player-drawer,.playback-error,.exit-dialog,.login-dialog) {
+  animation:none !important;
+  transition:transform 180ms cubic-bezier(.2,.7,.2,1);
+}
+.tv-overlay-leave-active > :is(.player-drawer,.playback-error,.exit-dialog,.login-dialog) { transition-duration:140ms; }
+.tv-overlay-enter-from > :is(.player-drawer,.playback-error,.exit-dialog,.login-dialog),
+.tv-overlay-leave-to > :is(.player-drawer,.playback-error,.exit-dialog,.login-dialog) { transform:translateY(12px); }
+.queue-overlay.tv-overlay-enter-from > .player-drawer,
+.queue-overlay.tv-overlay-leave-to > .player-drawer { transform:translateX(32px); }
+
+.tv-no-blur [data-focus-id]:focus-visible,
+.tv-no-blur [data-focus-id]:focus {
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.96);
+}
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .top-nav,
+  .mini-player,
+  .player-controls,
+  .mode-switch,
+  .mv-controls,
+  .player-drawer,
+  .playback-error,
+  .now-playing-page .overlay:not(.queue-overlay) {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+    background: var(--tv-glass-fallback) !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tv-canvas *, .tv-canvas *::before, .tv-canvas *::after, .tv-canvas.tv-rapid-input [data-focus-id] {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* 设置页“减少动态效果”开关：关闭动画与动效（Integration Task 4 视觉预算） */
+.tv-reduced-motion *,
+.tv-reduced-motion *::before,
+.tv-reduced-motion *::after,
+.tv-canvas.tv-reduced-motion [data-focus-id] {
+  animation: none !important;
+  transition: none !important;
+}
+
+/* D-pad reveal must settle with the focus, including on older TV WebViews.
+   `behavior:auto` otherwise inherits the shell's smooth scroll behavior. */
+.tv-canvas .content-surface,.tv-canvas .media-shelf,.tv-canvas .lyric-scroll,
+.tv-reduced-motion *,
+.tv-no-blur * { scroll-behavior:auto !important; }
+/* Keep the query at its normal TV size while Android reserves IME space. */
+.tv-ime-open .mini-player { visibility: hidden; }
+.tv-ime-open .search-page .page-header { display: none; }
+.tv-ime-open .search-page .term-section,
+.tv-ime-open .search-page .category-tabs,
+.tv-ime-open .search-page .search-results { visibility: hidden; }
+
+/* Secondary pages share the same TV-sized typography and warm accent roles. */
+.settings-page .eyebrow,.plugin-page .eyebrow,.recognize-page .eyebrow { color:var(--tv-accent); font-size:18px; }
+.settings-page .page-header p,.plugin-page .page-header p { font-size:23px; }
+.plugin-page .plugin-card strong { font-size:24px; }.plugin-page .plugin-card small { font-size:21px; }
+.plugin-page > button { min-height:64px; height:auto; font-size:23px; border-color:var(--tv-border); background:var(--tv-glass); color:var(--tv-text); }
+.search-page .term-section h2 button { margin-left:auto; border:0; min-height:52px; padding:8px 20px; border-radius:14px; color:var(--tv-text-secondary); background:#ffffff10; font-size:21px; }
+.error-status { color:#f8b9b9!important; }
+
+/* Legacy detail tabs and low-frequency controls use the same material roles. */
+.tv-canvas [data-page] .tabs .tab { min-height:56px; border-radius:16px; font-size:22px; }
+.tv-canvas [data-page] .tabs .tab.active { border-color:var(--tv-border); color:var(--tv-text); background:rgba(255,255,255,.14); }
+.tv-canvas [data-page] .pagination-status button,
+.tv-canvas [data-page] .detail-state button { min-height:58px; font-size:22px; color:var(--tv-text); border-color:var(--tv-border); background:var(--tv-glass); }
+.tv-canvas .settings-page .options button.active { background:rgba(255,255,255,.16); border-color:var(--tv-border); color:var(--tv-text); }
+.tv-canvas .settings-page .eyebrow,.tv-canvas .plugin-page .eyebrow,.tv-canvas .recognize-page .eyebrow { color:var(--tv-accent); }

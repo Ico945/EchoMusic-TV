@@ -1,0 +1,49 @@
+{
+  "qr": [
+    { "payload": { "status": 0 }, "expected": "expired" },
+    { "payload": { "status": 1 }, "expected": "waiting" },
+    { "payload": { "status": 2 }, "expected": "scanned" },
+    { "payload": { "status": 4, "userid": "42" }, "expected": "waiting" },
+    {
+      "payload": {
+        "status": 4,
+        "userid": "42",
+        "token": "synthetic-session-placeholder",
+        "vip_type": 1,
+        "vip_token": "synthetic-membership-placeholder"
+      },
+      "expected": "confirmed"
+    },
+    { "payload": { "status": 99 }, "expected": "waiting" }
+  ],
+  "signing": {
+    "query": { "b": "1", "a": "2" },
+    "body": "body-data"
+  },
+  "mv": {
+    "videoId": "9001",
+    "quality": "hd",
+    "expectedHash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "detailResponse": {
+      "data": {
+        "metadata": { "hd_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" },
+        "info": [
+          {
+            "h264": {
+              "hd_hash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+              "fhd_hash": "dddddddddddddddddddddddddddddddd"
+            },
+            "h265": { "hd_hash": "cccccccccccccccccccccccccccccccc" }
+          }
+        ]
+      }
+    },
+    "streamResponse": {
+      "data": {
+        "play_info": {
+          "downurl": ["https://webfs.kugou.com/mv-fixture.mp4"]
+        }
+      }
+    }
+  }
+}

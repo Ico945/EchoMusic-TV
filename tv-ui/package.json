@@ -1,0 +1,33 @@
+{
+  "name": "echomusic-tv-ui",
+  "version": "0.4.6-r54",
+  "private": true,
+  "description": "EchoMusic Android TV interface",
+  "license": "GPL-3.0-only",
+  "author": {
+    "name": "hoowhoami"
+  },
+  "scripts": {
+    "dev:tv": "vite --config vite.tv.config.mts",
+    "build:tv": "vue-tsc --noEmit -p tsconfig.tv.json && vite build --config vite.tv.config.mts",
+    "test:tv": "vitest run --config vitest.tv.config.mts"
+  },
+  "dependencies": {
+    "pinia": "^3.0.4",
+    "vue": "^3.5.38",
+    "vue-router": "^4.6.4"
+  },
+  "devDependencies": {
+    "@pinia/testing": "1.0.3",
+    "@types/node": "^25.9.1",
+    "@vitejs/plugin-vue": "^6.0.7",
+    "@vue/compiler-dom": "3.5.38",
+    "@vue/compiler-sfc": "3.5.38",
+    "@vue/test-utils": "^2.4.6",
+    "jsdom": "^26.1.0",
+    "typescript": "^5.9.3",
+    "vite": "^8.0.14",
+    "vitest": "^4.1.10",
+    "vue-tsc": "^3.3.3"
+  }
+}

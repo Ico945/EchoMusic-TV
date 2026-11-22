@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/renderer/*"],
+      "@tv/*": ["./src/tv/*"]
+    }
+  },
+  "include": ["src/tv/**/*.ts", "src/tv/**/*.vue", "src/tv/**/*.d.ts"]
+}

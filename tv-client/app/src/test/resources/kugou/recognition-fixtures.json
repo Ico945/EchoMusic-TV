@@ -1,0 +1,30 @@
+{
+  "match": {
+    "status": 1,
+    "error_code": 0,
+    "error_msg": "",
+    "data": {
+      "list": [
+        {
+          "hash": "a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6",
+          "audio_id": "111222333",
+          "song_name": "示例歌曲",
+          "singer_name": "示例歌手",
+          "album_name": "示例专辑",
+          "score": 92
+        },
+        {
+          "hash": "b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f",
+          "song_name": "第二首示例",
+          "singer_name": "歌手二",
+          "score": 45
+        }
+      ]
+    }
+  },
+  "empty": {
+    "status": 1,
+    "error_code": 0,
+    "data": {}
+  }
+}

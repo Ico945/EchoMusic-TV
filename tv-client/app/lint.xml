@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<lint>
+    <!-- Android TV requires a 320x180 xhdpi banner. The launcher icon itself
+         is an any-density vector, so additional density folders are neither
+         needed nor desirable for this application. -->
+    <issue id="IconMissingDensityFolder">
+        <ignore path="src/main/res" />
+    </issue>
+</lint>

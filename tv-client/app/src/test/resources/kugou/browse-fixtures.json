@@ -1,0 +1,186 @@
+{
+  "search_song": {
+    "status": 1,
+    "error_code": 0,
+    "data": {
+      "page": 1,
+      "pagesize": 30,
+      "total": 2,
+      "info": [
+        {
+          "album_audio_id": "1001",
+          "hash": "00000000000000000000000000000000",
+          "songname": "示例歌曲A",
+          "singername": "歌手A",
+          "album_id": "9001",
+          "album_name": "示例专辑A",
+          "duration": 200,
+          "img": "https://imge.kugou.com/{size}/a.jpg",
+          "qualities": ["128", "320", "flac"]
+        },
+        {
+          "album_audio_id": "1002",
+          "hash": "00000000000000000000000000000001",
+          "songname": "示例歌曲B",
+          "singername": "歌手B",
+          "vip_type": 1,
+          "qualities": ["128", "320"]
+        }
+      ]
+    }
+  },
+  "search_special": {
+    "status": 1,
+    "error_code": 0,
+    "data": {
+      "page": 1,
+      "total": 2,
+      "lists": [
+        { "specialid": "2001", "name": "示例歌单A", "img": "https://imge.kugou.com/plist/2001.jpg" },
+        { "listid": "2002", "name_desc": "示例歌单B", "img": "https://imge.kugou.com/plist/2002.jpg" }
+      ]
+    }
+  },
+  "search_album": {
+    "status": 1,
+    "error_code": 0,
+    "data": {
+      "page": 1,
+      "total": 2,
+      "lists": [
+        { "album_id": "3001", "album_name": "示例专辑A", "author_name": "歌手A", "sizable_cover": "https://imge.kugou.com/album/3001.jpg" },
+        { "album_id": "3002", "album_name": "示例专辑B", "author_name": "歌手B", "sizable_cover": "https://imge.kugou.com/album/3002.jpg" }
+      ]
+    }
+  },
+  "search_author": {
+    "status": 1,
+    "error_code": 0,
+    "data": {
+      "page": 1,
+      "total": 2,
+      "lists": [
+        { "author_id": "4001", "author_name": "示例歌手A", "pic": "https://imge.kugou.com/singer/4001.jpg" },
+        { "singer_id": "4002", "singername": "示例歌手B", "pic": "https://imge.kugou.com/singer/4002.jpg" }
+      ]
+    }
+  },
+  "search_lyric": {
+    "status": 1,
+    "error_code": 0,
+    "data": {
+      "page": 1,
+      "total": 1,
+      "info": [
+        { "album_audio_id": "1001", "hash": "00000000000000000000000000000000", "songname": "示例歌曲A", "singername": "歌手A" }
+      ]
+    }
+  },
+  "search_mv": {
+    "status": 1,
+    "error_code": 0,
+    "data": {
+      "page": 1,
+      "total": 2,
+      "lists": [
+        { "video_id": "5001", "name": "示例MV-A", "author": "歌手A", "img": "https://imge.kugou.com/mv/5001.jpg" },
+        { "mv_id": "5002", "title": "示例MV-B", "singername": "歌手B", "img": "https://imge.kugou.com/mv/5002.jpg" }
+      ]
+    }
+  },
+  "hot_tab": {
+    "status": 1,
+    "error_code": 0,
+    "data": {
+      "hot_tab": [
+        {
+          "tab_id": 1,
+          "tab_name": "实时热搜",
+          "words": [
+            { "word": "热歌榜", "heat": 100 },
+            { "word": "新歌首发", "heat": 90 }
+          ]
+        }
+      ]
+    }
+  },
+  "everyday_recommend": {
+    "status": 1,
+    "error_code": 0,
+    "data": {
+      "recommend_song": [
+        { "album_audio_id": "6001", "hash": "00000000000000000000000000000002", "songname": "每日推荐A", "singername": "歌手A" },
+        { "album_audio_id": "6002", "hash": "00000000000000000000000000000003", "songname": "每日推荐B", "singername": "歌手B" }
+      ]
+    }
+  },
+  "personal_fm": {
+    "status": 1,
+    "error_code": 0,
+    "data": {
+      "list": [
+        { "album_audio_id": "7001", "hash": "00000000000000000000000000000004", "songname": "私人FMA", "singername": "歌手A" },
+        { "album_audio_id": "7002", "hash": "00000000000000000000000000000005", "songname": "私人FMB", "singername": "歌手B" }
+      ]
+    }
+  },
+  "rank_list": {
+    "status": 1,
+    "error_code": 0,
+    "data": {
+      "list": [
+        { "rankid": "8001", "rankname": "热歌榜", "img": "https://imge.kugou.com/rank/8001.jpg" },
+        { "rankid": "8002", "rankname": "新歌榜", "banner": "https://imge.kugou.com/rank/8002.jpg" }
+      ]
+    }
+  },
+  "rank_audio": {
+    "status": 1,
+    "error_code": 0,
+    "data": {
+      "page": 1,
+      "pagesize": 30,
+      "total": 45,
+      "list": [
+        { "album_audio_id": "8101", "hash": "00000000000000000000000000000006", "songname": "榜单歌曲A", "singername": "歌手A" },
+        { "album_audio_id": "8102", "hash": "00000000000000000000000000000007", "songname": "榜单歌曲B", "singername": "歌手B" }
+      ]
+    }
+  },
+  "newsong_publish": {
+    "status": 1,
+    "error_code": 0,
+    "data": {
+      "page": 1,
+      "total": 2,
+      "song_list": [
+        { "album_audio_id": "9101", "hash": "00000000000000000000000000000008", "songname": "新歌A", "singername": "歌手A", "qualities": ["128", "320", "hires"] },
+        { "album_audio_id": "9102", "hash": "00000000000000000000000000000009", "songname": "新歌B", "singername": "歌手B" }
+      ]
+    }
+  },
+  "mobile_newalbum_sp": {
+    "status": 1,
+    "error_code": 0,
+    "data": {
+      "page": 1,
+      "total": 2,
+      "list": [
+        { "album_id": "9201", "album_name": "新专辑A", "author_name": "歌手A", "sizable_cover": "https://imge.kugou.com/album/9201.jpg" },
+        { "album_id": "9202", "album_name": "新专辑B", "author_name": "歌手B", "sizable_cover": "https://imge.kugou.com/album/9202.jpg" }
+      ]
+    }
+  },
+  "special_recommend": {
+    "status": 1,
+    "error_code": 0,
+    "data": {
+      "page": 1,
+      "total": 2,
+      "lists": [
+        { "specialid": "9301", "name": "推荐歌单A", "img": "https://imge.kugou.com/plist/9301.jpg" },
+        { "specialid": "9302", "name": "推荐歌单B", "img": "https://imge.kugou.com/plist/9302.jpg" }
+      ]
+    }
+  }
+}

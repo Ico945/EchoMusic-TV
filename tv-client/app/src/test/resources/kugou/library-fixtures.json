@@ -1,0 +1,163 @@
+{
+  "user_playlist": {
+    "data": {
+      "list": [
+        {
+          "listid": 100,
+          "list_create_userid": 42,
+          "listname": "默认收藏",
+          "img": "https://s.kugou.com/cover/100.png",
+          "type": 0
+        },
+        {
+          "listid": 200,
+          "list_create_userid": 42,
+          "listname": "通勤歌单",
+          "img": "https://s.kugou.com/cover/200.png",
+          "type": 0
+        },
+        {
+          "listid": 300,
+          "list_create_userid": 99,
+          "listname": "收藏的民谣歌单",
+          "img": "https://s.kugou.com/cover/300.png",
+          "type": 1,
+          "source": 1
+        },
+        {
+          "listid": 400,
+          "listname": "收藏的专辑",
+          "img": "https://s.kugou.com/cover/400.png",
+          "type": 1,
+          "source": 2,
+          "list_create_listid": 4000
+        }
+      ],
+      "total": 4
+    }
+  },
+  "playlist_tracks": {
+    "data": {
+      "info": [
+        {
+          "hash": "synthhash000000000000000000000001",
+          "album_audio_id": 111,
+          "songname": "收藏歌曲一",
+          "singername": "歌手甲",
+          "album_id": 11,
+          "album_name": "专辑一",
+          "duration": 201
+        },
+        {
+          "hash": "synthhash000000000000000000000002",
+          "album_audio_id": 222,
+          "songname": "收藏歌曲二",
+          "singername": "歌手乙",
+          "album_id": 22,
+          "album_name": "专辑二",
+          "duration": 202
+        }
+      ],
+      "total": 2
+    }
+  },
+  "history": {
+    "data": {
+      "info": [
+        {
+          "hash": "synthhash000000000000000000000003",
+          "album_audio_id": 333,
+          "songname": "历史歌曲一",
+          "singername": "歌手丙",
+          "album_id": 33,
+          "duration": 203
+        }
+      ],
+      "total": 1
+    }
+  },
+  "cloud_list": {
+    "data": {
+      "list": [
+        {
+          "kv_id": 1001,
+          "album_audio_id": 901,
+          "filename": "云盘歌曲一",
+          "hash": "synthhash000000000000000000000004"
+        },
+        {
+          "kv_id": 1002,
+          "album_audio_id": 902,
+          "filename": "云盘歌曲二",
+          "hash": "synthhash000000000000000000000005"
+        }
+      ],
+      "total": 2
+    }
+  },
+  "purchased_songs": {
+    "data": {
+      "list": [
+        {
+          "hash": "synthhash000000000000000000000006",
+          "album_audio_id": 444,
+          "songname": "已购歌曲一",
+          "singername": "歌手丁",
+          "album_id": 44,
+          "duration": 204
+        }
+      ],
+      "total": 1
+    }
+  },
+  "purchased_albums": {
+    "data": {
+      "list": [
+        {
+          "album_id": 500,
+          "album_name": "已购专辑一",
+          "author_name": "歌手戊",
+          "sizable_cover": "https://s.kugou.com/cover/500.png"
+        }
+      ],
+      "total": 1
+    }
+  },
+  "follow_artists": {
+    "data": {
+      "list": [
+        {
+          "singerid": 601,
+          "singername": "关注歌手一",
+          "pic": "https://s.kugou.com/cover/601.png"
+        },
+        {
+          "singerid": 602,
+          "singername": "关注歌手二",
+          "pic": "https://s.kugou.com/cover/602.png"
+        }
+      ],
+      "total": 2
+    }
+  },
+  "collect_videos": {
+    "data": {
+      "list": [
+        {
+          "video_id": 701,
+          "name": "收藏MV一",
+          "pic": "https://s.kugou.com/cover/701.png"
+        }
+      ],
+      "total": 1
+    }
+  },
+  "profile": {
+    "data": {
+      "userid": 42,
+      "nickname": "测试用户",
+      "pic": "https://s.kugou.com/avatar/42.png",
+      "signature": "个人简介"
+    }
+  }
+}

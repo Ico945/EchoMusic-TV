@@ -1,0 +1,272 @@
+{
+  "playlistMeta": {
+    "status": 1,
+    "error_code": 0,
+    "data": {
+      "info": [
+        {
+          "listid": "9001",
+          "listname": "夜晚歌单",
+          "img": "https://img.example.com/playlist/{size}/9001.jpg",
+          "userinfo": {
+            "userid": "u42",
+            "username": "造歌单的人",
+            "user_pic": "https://img.example.com/user/u42.jpg"
+          },
+          "play_count": 123456,
+          "tags": "夜晚,民谣,安静",
+          "intro": "夜晚专属歌单",
+          "song_count": 45
+        }
+      ]
+    }
+  },
+  "playlistTracks": {
+    "status": 1,
+    "error_code": 0,
+    "data": {
+      "page": 1,
+      "pagesize": 30,
+      "total": 45,
+      "info": [
+        {
+          "album_audio_id": 76201,
+          "hash": "f0e0f1e2d3c4b5a69788796a5b4c3d2e",
+          "songname": "若把你",
+          "singername": "刘瑾睿",
+          "album_name": "若把你",
+          "img": "https://img.example.com/track/{size}/76201.jpg",
+          "duration": 210
+        }
+      ]
+    }
+  },
+  "albumMeta": {
+    "status": 1,
+    "error_code": 0,
+    "data": [
+      {
+        "album_id": "3001",
+        "album_name": "山野",
+        "sizable_cover": "https://img.example.com/album/{size}/3001.jpg",
+        "publish_date": "2024-03-01",
+        "intro": "山野之间",
+        "author_name": "某个乐队",
+        "authors": [
+          { "author_id": "9", "author_name": "某个乐队" }
+        ]
+      }
+    ]
+  },
+  "albumTracks": {
+    "status": 1,
+    "error_code": 0,
+    "data": {
+      "page": 1,
+      "pagesize": 30,
+      "total": 12,
+      "list": [
+        {
+          "album_audio_id": 76201,
+          "hash": "f0e0f1e2d3c4b5a69788796a5b4c3d2e",
+          "songname": "若把你",
+          "singername": "刘瑾睿",
+          "album_name": "山野",
+          "img": "https://img.example.com/track/{size}/76201.jpg",
+          "duration": 210
+        }
+      ]
+    }
+  },
+  "artistMeta": {
+    "status": 1,
+    "error_code": 0,
+    "data": {
+      "author_id": "9",
+      "author_name": "刘瑾睿",
+      "pic": "https://img.example.com/artist/9.jpg",
+      "intro": "创作型歌手"
+    }
+  },
+  "artistSongs": {
+    "status": 1,
+    "error_code": 0,
+    "data": {
+      "page": 1,
+      "pagesize": 30,
+      "total": 45,
+      "audios": [
+        {
+          "album_audio_id": 76201,
+          "hash": "f0e0f1e2d3c4b5a69788796a5b4c3d2e",
+          "songname": "若把你",
+          "singername": "刘瑾睿",
+          "img": "https://img.example.com/track/{size}/76201.jpg",
+          "duration": 210
+        }
+      ]
+    }
+  },
+  "artistAlbums": {
+    "status": 1,
+    "error_code": 0,
+    "data": {
+      "page": 1,
+      "pagesize": 30,
+      "total": 5,
+      "albums": [
+        {
+          "album_id": "3001",
+          "album_name": "山野",
+          "author_name": "某个乐队",
+          "sizable_cover": "https://img.example.com/album/{size}/3001.jpg"
+        }
+      ]
+    }
+  },
+  "artistVideos": {
+    "status": 1,
+    "error_code": 0,
+    "data": {
+      "page": 1,
+      "pagesize": 30,
+      "total": 3,
+      "videos": [
+        {
+          "video_id": "5001",
+          "video_name": "若把你 MV",
+          "author": "刘瑾睿",
+          "img": "https://img.example.com/mv/5001.jpg",
+          "play_count": 9999,
+          "seconds": 240
+        }
+      ]
+    }
+  },
+  "songMetaKrm": {
+    "status": 1,
+    "error_code": 0,
+    "data": {
+      "album_audio_id": 76201,
+      "hash": "f0e0f1e2d3c4b5a69788796a5b4c3d2e",
+      "songname": "若把你",
+      "singername": "刘瑾睿",
+      "album_name": "若把你",
+      "img": "https://img.example.com/track/{size}/76201.jpg",
+      "duration": 210
+    }
+  },
+  "songMetaHash": {
+    "status": 1,
+    "error_code": 0,
+    "data": {
+      "hash": "f0e0f1e2d3c4b5a69788796a5b4c3d2e",
+      "songname": "若把你",
+      "singername": "刘瑾睿",
+      "album_name": "若把你",
+      "img": "https://img.example.com/track/{size}/76201.jpg",
+      "duration": 210
+    }
+  },
+  "mvMeta": {
+    "status": 1,
+    "error_code": 0,
+    "data": {
+      "video_id": "5001",
+      "name": "若把你 MV",
+      "author": "刘瑾睿",
+      "img": "https://img.example.com/mv/5001.jpg",
+      "seconds": 240,
+      "play_count": 9999,
+      "intro": "官方 MV"
+    }
+  },
+  "commentsSong": {
+    "status": 1,
+    "error_code": 0,
+    "data": {
+      "page": 1,
+      "pagesize": 30,
+      "total": 88,
+      "list": [
+        {
+          "tid": "c1",
+          "author": {
+            "user_id": "u1",
+            "user_name": "歌迷甲",
+            "avatar": "https://img.example.com/user/u1.jpg"
+          },
+          "content": "太好听了",
+          "time": 1700000000,
+          "like_count": 12
+        }
+      ],
+      "hotword_list": [
+        { "word": "好听", "count": 10 }
+      ]
+    }
+  },
+  "commentsPlaylist": {
+    "status": 1,
+    "error_code": 0,
+    "data": {
+      "page": 1,
+      "pagesize": 30,
+      "total": 5,
+      "list": [
+        {
+          "tid": "c1",
+          "author": {
+            "user_id": "u1",
+            "user_name": "歌迷甲",
+            "avatar": "https://img.example.com/user/u1.jpg"
+          },
+          "content": "这个歌单很棒",
+          "time": 1700000001,
+          "like_count": 3
+        }
+      ]
+    }
+  },
+  "commentsAlbum": {
+    "status": 1,
+    "error_code": 0,
+    "data": {
+      "page": 1,
+      "pagesize": 30,
+      "total": 2,
+      "list": [
+        {
+          "tid": "c1",
+          "author": {
+            "user_id": "u1",
+            "user_name": "歌迷甲",
+            "avatar": "https://img.example.com/user/u1.jpg"
+          },
+          "content": "专辑值得收藏",
+          "time": 1700000002,
+          "like_count": 1
+        }
+      ]
+    }
+  },
+  "relatedCards": {
+    "status": 1,
+    "error_code": 0,
+    "data": {
+      "page": 1,
+      "pagesize": 30,
+      "total": 1,
+      "audios": [
+        {
+          "album_audio_id": 76202,
+          "hash": "f0e0f1e2d3c4b5a69788796a5b4c3d2f",
+          "songname": "相关歌曲",
+          "singername": "某位歌手",
+          "img": "https://img.example.com/track/{size}/76202.jpg",
+          "duration": 200
+        }
+      ]
+    }
+  }
+}

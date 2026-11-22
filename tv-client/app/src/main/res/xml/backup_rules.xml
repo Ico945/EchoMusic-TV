@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- G（目标模式）：低版本（API 26-30）full-backup 排除会话存储（refresh token 不进备份） -->
+<full-backup-content>
+    <exclude domain="sharedpref" path="kutv_session.xml" />
+    <exclude domain="sharedpref" path="kutv_session.xml.tmp" />
+    <exclude domain="sharedpref" path="kutv_playback_resume.xml" />
+    <exclude domain="sharedpref" path="kutv_playback_resume.xml.tmp" />
+</full-backup-content>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- G（目标模式）：DataExtractionRules——云备份/设备迁移排除会话存储（refresh token 不进备份，安全加分） -->
+<data-extraction-rules>
+    <cloud-backup>
+        <exclude domain="sharedpref" path="kutv_session.xml" />
+        <exclude domain="sharedpref" path="kutv_session.xml.tmp" />
+        <exclude domain="sharedpref" path="kutv_playback_resume.xml" />
+        <exclude domain="sharedpref" path="kutv_playback_resume.xml.tmp" />
+    </cloud-backup>
+    <device-transfer>
+        <exclude domain="sharedpref" path="kutv_session.xml" />
+        <exclude domain="sharedpref" path="kutv_session.xml.tmp" />
+        <exclude domain="sharedpref" path="kutv_playback_resume.xml" />
+        <exclude domain="sharedpref" path="kutv_playback_resume.xml.tmp" />
+    </device-transfer>
+</data-extraction-rules>

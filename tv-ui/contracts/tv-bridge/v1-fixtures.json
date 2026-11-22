@@ -1,0 +1,135 @@
+{
+  "validRequest": {
+    "version": 1,
+    "type": "request",
+    "id": "request-1",
+    "method": "app.getSnapshot",
+    "payload": {}
+  },
+  "validResponse": {
+    "version": 1,
+    "type": "response",
+    "id": "request-1",
+    "ok": true,
+    "payload": { "route": "home" }
+  },
+  "validEvent": {
+    "version": 1,
+    "type": "event",
+    "event": "playback.changed",
+    "payload": { "state": "playing" }
+  },
+  "validAppErrorEvent": {
+    "version": 1,
+    "type": "event",
+    "event": "app.error",
+    "payload": {
+      "code": "PLAYBACK_NEXT_FAILED",
+      "message": "下一首加载失败，按确认键重试",
+      "retryable": true,
+      "errorId": 7001
+    }
+  },
+  "wrongVersionResponse": {
+    "version": 2,
+    "type": "response",
+    "id": "request-3",
+    "ok": true,
+    "payload": {}
+  },
+  "wrongVersionEvent": {
+    "version": 2,
+    "type": "event",
+    "event": "playback.changed",
+    "payload": { "state": "playing" }
+  },
+  "malformedPayloadResponse": {
+    "version": 1,
+    "type": "response",
+    "id": "request-3",
+    "ok": true,
+    "payload": { "route": "home", "constructor": "invalid" }
+  },
+  "sensitiveFieldResponse": {
+    "version": 1,
+    "type": "response",
+    "id": "request-3",
+    "ok": true,
+    "payload": { "accessToken": "must-not-cross-the-bridge" }
+  },
+  "contentSearchSongPage": {
+    "items": [
+      {
+        "id": "tv_00000000000000000000000000000001",
+        "title": "若把你",
+        "kind": "song",
+        "subtitle": "Kirsty刘瑾睿",
+        "artwork": "",
+        "badge": "无损"
+      },
+      {
+        "id": "tv_00000000000000000000000000000002",
+        "title": "若把你 · 伴奏",
+        "kind": "song",
+        "subtitle": "Kirsty刘瑾睿",
+        "artwork": ""
+      }
+    ],
+    "nextCursor": "2",
+    "total": 18
+  },
+  "contentPlaylistCardPage": {
+    "items": [
+      { "id": "playlist:86052", "title": "夜晚歌单", "kind": "playlist", "subtitle": "12 首", "artwork": "" },
+      { "id": "playlist:86053", "title": "晨间清醒", "kind": "playlist", "subtitle": "8 首", "artwork": "" }
+    ],
+    "nextCursor": "p2",
+    "total": 42
+  },
+  "contentDetailPlaylist": {
+    "id": "playlist:86052",
+    "title": "夜晚歌单",
+    "kind": "playlist",
+    "artwork": "",
+    "creator": null,
+    "playCount": 12893,
+    "tags": ["夜晚", "安静"],
+    "introduction": "为深夜准备的声音。",
+    "trackCount": 12,
+    "tabs": ["songs", "comments", "introduction"],
+    "tracks": {
+      "items": [
+        {
+          "id": "tv_00000000000000000000000000000003",
+          "title": "蓝色时刻",
+          "artist": "Echo Sessions",
+          "album": "Blue Hour",
+          "artwork": "",
+          "durationMs": 221000
+        }
+      ],
+      "nextCursor": null,
+      "total": 12
+    }
+  },
+  "contentCommentPage": {
+    "items": [
+      {
+        "id": "c-1",
+        "user": { "id": "u-1", "nickname": "夜航员", "avatar": "", "summary": "" },
+        "content": "循环一整晚。",
+        "time": 1700000000000,
+        "likeCount": 32,
+        "replies": null
+      }
+    ],
+    "nextCursor": null,
+    "total": 1
+  },
+  "contentLibrarySummary": {
+    "counts": { "favoriteSongs": 3, "favoriteArtists": 0, "favoriteUsers": 0, "favoriteAlbums": 1, "favoriteMvs": 0, "history": 12, "cloud": 5, "purchasedSongs": 0, "purchasedAlbums": 0, "createdPlaylists": 2, "favoritePlaylists": 1 },
+    "featured": [
+      { "id": "playlist:90001", "title": "我的收藏", "kind": "playlist", "subtitle": "3 首", "artwork": "" }
+    ]
+  }
+}
